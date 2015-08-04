@@ -55,7 +55,7 @@ class SnapshotsClient(object):
         """
         Returns a list of currently stored snapshots.
 
-        :param _include: List of fields to include in responce.
+        :param _include: List of fields to include in response.
         :return: Snapshots list.
         """
         response = self.api.get('/snapshots', _include=_include)
@@ -65,7 +65,7 @@ class SnapshotsClient(object):
         """
         Creates a new snapshot.
 
-        :param snapshot_id: Snapshot id of the new created deployment.
+        :param snapshot_id: Snapshot id of the snapshot that will be created.
         :return: The created snapshot.
         """
         assert snapshot_id
@@ -102,9 +102,9 @@ class SnapshotsClient(object):
         :param snapshot_id: Id of the uploaded snapshot.
         :return: Uploaded snapshot.
 
-        Snapshot archive should be this which was created and downloaded
-        from Cloudify's manager in process of create snapshot / download
-        snapshot commands.
+        Snapshot archive should be the same file that had been created
+        and downloaded from Cloudify's manager as a result of create
+        snapshot / download snapshot commands.
         """
         assert snapshot_path
         assert snapshot_id
